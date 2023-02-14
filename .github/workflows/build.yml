@@ -245,3 +245,9 @@ jobs:
       -   run: tar -xf /tmp/web3-${{ matrix.node }}.js.tar.gz -C ./
       -   run: yarn test:coverage:e2e:${{ matrix.backend }}:${{ matrix.mode }}
           shell: bash
+
+  code-cov:
+    name: Code coverage 
+    steps:
+      - uses: actions/download-artifact@v3
+      - uses: codecov/codecov-action@v3
